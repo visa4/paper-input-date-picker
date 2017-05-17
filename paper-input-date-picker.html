@@ -53,10 +53,6 @@ Example:
         color: var(--paper-red-500);
         --paper-button-flat-focus-color: var(--paper-red-50);
       }
-      
-      paper-button.btn-clear:hover {
-        background: var(--paper-red-50);
-      }
 
       @media (max-width: 600px) {
         :host paper-dialog {
@@ -112,7 +108,6 @@ Example:
     <paper-dialog id="dialog" class="paper-date-picker-dialog" modal="[[modal]]" on-iron-overlay-closed="_dismissDialog">
       <paper-date-picker id="picker" locale="[[locale]]" min-date="[[_computeMinDate(minDate)]]" max-date="[[_computeMaxDate(maxDate)]]"></paper-date-picker>
       <div class="buttons">
-        <paper-button dialog-dismiss on-tap="_onTapClearValue" class="btn-clear">Clear</paper-button>
         <paper-button dialog-dismiss>Cancel</paper-button>
         <paper-button dialog-confirm>OK</paper-button>
       </div>
@@ -277,10 +272,6 @@ Example:
         this._clearValue();
       }
       e.stopPropagation();
-    },
-    
-    _onTapClearValue: function () {
-      this.value = null;
     },
 
     // Element Lifecycle
